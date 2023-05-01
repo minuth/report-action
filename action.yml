@@ -1,11 +1,20 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Report'
+description: 'Retrieve various statistics about a GitHub repository'
+author: 'Minuth Prom'
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  repository:
+    description: 'Repository name with owner. For example, minuth/report-action'
+    default: ${{ github.repository }}
+  token:
+    description: >
+      Personal access token (PAT) used to fetch the repository. The PAT is configured
+      with the local git config, which enables your scripts to run authenticated git
+      commands.
+      [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    default: ${{ github.token }}
+outputs:
+  report:
+    description: 'The report result in json format'
 runs:
   using: 'node16'
   main: 'dist/index.js'

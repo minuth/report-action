@@ -20,5 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./
-        with:
-          milliseconds: 1000
+        id: report_action
+      - name: Get the output report
+        run: echo "The report is ${{steps.report_action.outputs.report}}"
