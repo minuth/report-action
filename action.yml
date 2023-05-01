@@ -1,6 +1,9 @@
 name: 'Repository Report'
 description: 'Retrieve various statistics about a GitHub repository'
 author: 'Minuth Prom'
+branding:
+  icon: 'activity'
+  color: 'gray-dark'
 inputs:
   repository:
     description: 'Repository name with owner. For example, minuth/report-action'
