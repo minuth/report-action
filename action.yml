@@ -1,4 +1,4 @@
-name: 'Report'
+name: 'Repository Report'
 description: 'Retrieve various statistics about a GitHub repository'
 author: 'Minuth Prom'
 inputs:
