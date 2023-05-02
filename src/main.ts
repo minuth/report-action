@@ -8,7 +8,7 @@ async function run(): Promise<void> {
     const repositoryReport = await getRepositoryReport()
     const report = {repository: repositoryReport}
 
-    core.setOutput('report', report)
+    core.setOutput('report', JSON.stringify(report))
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }

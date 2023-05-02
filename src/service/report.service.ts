@@ -13,7 +13,9 @@ export class ReportService {
   }
 
   async getRepositoryReport(): Promise<RepositoryReport> {
-    const report = await this.octokit.graphql<RepositoryReport>(`
+    const {repository} = await this.octokit.graphql<{
+      repository: RepositoryReport
+    }>(`
     query { 
         repository(name: "${this.repositoryName}", owner: "${this.repositoryOwner}") {
           openIssues: issues(states: OPEN) {
@@ -47,6 +49,6 @@ export class ReportService {
       }
     `)
 
-    return report
+    return repository
   }
 }

@@ -47,7 +47,7 @@ function run() {
         try {
             const repositoryReport = yield getRepositoryReport();
             const report = { repository: repositoryReport };
-            core.setOutput('report', report);
+            core.setOutput('report', JSON.stringify(report));
         }
         catch (error) {
             if (error instanceof Error)
@@ -9765,7 +9765,7 @@ class ReportService {
     }
     getRepositoryReport() {
         return __awaiter(this, void 0, void 0, function* () {
-            const report = yield this.octokit.graphql(`
+            const { repository } = yield this.octokit.graphql(`
     query { 
         repository(name: "${this.repositoryName}", owner: "${this.repositoryOwner}") {
           openIssues: issues(states: OPEN) {
@@ -9798,7 +9798,7 @@ class ReportService {
         }
       }
     `);
-            return report;
+            return repository;
         });
     }
 }
