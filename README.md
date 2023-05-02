@@ -30,17 +30,17 @@ The report result in json format:
 
 ```
 {
-      repository: {
-        openIssues: { totalCount: 1 },
-        closedIssues: { totalCount: 1 },
-        openPullRequest: { totalCount: 4 },
-        closedPullRequest: { totalCount: 1 },
-        mergedPullRequest: { totalCount: 0 },
-        collaborators: { totalCount: 1 },
-        watchers: { totalCount: 1 },
-        forks: { totalCount: 0 },
-        stargazers: { totalCount: 0 }
-      }
+  "repository": {
+    "openIssues": { "totalCount": 1 },
+    "closedIssues": { "totalCount": 1 },
+    "openPullRequest": { "totalCount": 5 },
+    "closedPullRequest": { "totalCount": 2 },
+    "mergedPullRequest": { "totalCount": 4 },
+    "collaborators": { "totalCount": 1 },
+    "watchers": { "totalCount": 1 },
+    "forks": { "totalCount": 0 },
+    "stargazers": { "totalCount": 0 }
+  }
 }
 ```
 
