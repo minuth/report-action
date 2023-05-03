@@ -12,6 +12,8 @@ This GitHub Action allows you to retrieve various statistics about a GitHub repo
 - Total forks
 - Total stargazers
 
+> This action was built specifically as a utility action. It is recommended that you use it as a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) to follow best practices for GitHub Actions. See below example for detailed usage.
+
 ## Inputs
 
 ### `repository` [optional]
