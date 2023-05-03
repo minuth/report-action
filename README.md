@@ -44,4 +44,19 @@ The report result in json format:
 }
 ```
 
-## Example usage
+## Example
+
+In this below example we will use `report-action` to create a composite action.
+
+```
+runs:
+  using: 'composite'
+  steps:
+    - uses: minuth/report-action@v1
+      id: report_action
+    - run: node ./dist/index.js ${{steps.report_action.outputs.report}}
+```
+
+In this case, the first step uses the `minuth/report-action@v1` action to get the **report** and the second step runs a node script ([Javascript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)) that passes the **report** (output of the first step) as an argument. So the Javascript action can use the **report** argument the do anything in code.
+
+> This action can be used in the workflow like other actions.
